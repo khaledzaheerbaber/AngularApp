@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Angular - UI</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a *ngIf="isAuthenticated" routerLink="/home" routerLinkActive="active" class="nav-item nav-link">Home </a>
+        <a *ngIf="isAuthenticated" routerLink="/users" routerLinkActive="active" class="nav-item nav-link">Users </a>
+        <a  *ngIf="isAuthenticated"routerLink="/employees" routerLinkActive="active" class="nav-item nav-link">Employees </a>
+        <a *ngIf="isAuthenticated else else_content" class="nav-item nav-link" routerLink='/logout' routerLinkActive='active'>Logout</a>
+        <ng-template #else_content>
+          <a routerLink='/login' routerLinkActive='active' class="nav-item nav-link">Login</a>
+        </ng-template>
+      </div>
+    </div>
+  </nav>
